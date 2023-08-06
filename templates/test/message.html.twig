@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h3>Message Page</h3>
+    <p>Message page content goes here...</p>
+    {# <p>Name : {{name}} -- Age : {{age}}</p> #}
+    <p>Name : {{data.name}} -- Age : {{data.age}}</p>
+    <a class="btn btn-warning" href="{{path('app_main')}}">Home Page</a>
+</div>
+{% endblock %}

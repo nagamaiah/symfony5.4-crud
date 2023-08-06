@@ -1,3 +1,17 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+
+about:
+   path: /about
+   controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+   defaults:
+        template: 'pages/about.html.twig'
+
+contact:
+   path: /contact
+   controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+   defaults:
+        template: 'pages/contact.html.twig'
+
+show_user:
+   path: /user/{user_id?}
+   controller: App\Controller\TestController::showUser
+   methods: GET

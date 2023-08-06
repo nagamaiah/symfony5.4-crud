@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crud Main Page{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h3>Crud Index Page</h3>
+    {% for message in app.flashes('msg') %}
+        <div class="alert alert-success">
+            {{message}}
+        </div>end
+    {% endfor %}
+
+    <button class="btn btn-success float-right mb-4">
+        <a style="text-decoration:none;color:white;" href="{{url('create')}}">Create</a>
+    </button>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{item.title}}</td>
+                <td>{{item.content}}</td>
+                <td>
+                    <a class="btn btn-warning" href="{{path('update',{'id':item.id })}}">Update</a>
+                    <a class="btn btn-danger" href="{{path('delete',{'id':item.id })}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+
+        <footer>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('about')}}">About Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('contact')}}">Contact Page</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+</div>
+{% endblock %}

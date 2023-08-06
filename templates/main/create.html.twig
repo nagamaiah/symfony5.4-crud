@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Form{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+        <h3>Create Form</h3>
+            {{form_start(crud_form)}}
+                <div class="form-group">
+                    {{form_label(crud_form.title)}}
+                    {{form_widget(crud_form.title, {'attr':{'class':'form-control'}})}}
+                </div>
+                <div class="form-group">
+                    {{form_label(crud_form.content)}}
+                    {{ form_widget(crud_form.content, {'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info">Submit</button>
+                </div>
+            {{form_end(crud_form)}}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
